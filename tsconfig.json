@@ -15,6 +15,6 @@
     "sourceMap": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*", "global-teardown.ts", "playwright.config.ts"],
+  "include": ["src/**/*", "playwright.config.ts"],
   "exclude": ["node_modules", "dist", "reports", "ai-agent"]
 }

@@ -103,6 +103,8 @@ report:
 
 report-docker:
 	docker compose up -d allure
+	@echo "⏳ Waiting for Allure server to start..."
+	@sleep 10
 	@echo "🚀 Allure Report is now running in Docker!"
 	@echo "👉 Open your browser at: http://localhost:5050/allure-docker-service/projects/default/reports/latest/index.html"
 
