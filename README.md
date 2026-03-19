@@ -231,3 +231,4 @@ Test Fails → Parse Error → AI Diagnoses Root Cause
 | **Reports** | Allure (Docker) + Playwright HTML |
 | **Docker** | Docker Compose (Allure server + test runner) |
 | **Lint** | ESLint + Prettier + Husky |
+
