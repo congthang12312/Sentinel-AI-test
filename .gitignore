@@ -20,6 +20,7 @@ allure/
 .features-gen/
 .auth/
 
+
 # Environment files (all variants)
 .env
 .env.*
