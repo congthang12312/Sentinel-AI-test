@@ -1,0 +1,22 @@
+node_modules
+.git
+.github
+.agent
+.husky
+playwright-report
+test-results
+allure
+reports
+.test-artifacts
+.features-gen
+.auth
+.DS_Store
+.vscode
+*.md
+!README.md
+ai-agent/mcp-servers/playwright/node_modules
+
+# Env files — allow .env.local into Docker for playwright.config.ts
+.env
+.env.*.example
+

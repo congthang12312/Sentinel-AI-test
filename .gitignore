@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+ai-agent/mcp-servers/playwright/node_modules/
+
+# Build output
+dist/
+*.js.map
+
+# Playwright artifacts
+playwright-report/
+test-results/
+
+# Allure artifacts
+allure-results/
+allure-report/
+allure/
+
+# Test generation and auth artifacts
+.test-artifacts/
+.features-gen/
+.auth/
+
+# Environment files (all variants)
+.env
+.env.*
+!.env.example
+
+# Secrets & Credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.secret
+**/secrets/
+**/credentials/
+
+# Reports & Screenshots (regenerable)
+reports/
+playwright-report/
+
+# IDE/OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db

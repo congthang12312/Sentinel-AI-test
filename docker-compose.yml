@@ -1,0 +1,35 @@
+services:
+  allure:
+    image: "frankescobar/allure-docker-service"
+    container_name: allure_server
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 3
+      KEEP_HISTORY: 20
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./allure/results:/app/allure-results
+      - ./allure/report:/app/default-reports
+    restart: unless-stopped
+
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: playwright_runner
+    env_file:
+      - path: .env.local
+        required: false
+    environment:
+      - CI=true
+      - BASE_URL=${BASE_URL:-https://opensource-demo.orangehrmlive.com}
+      - TEST_ENV=${TEST_ENV:-dev}
+      - SUT_USERNAME=${SUT_USERNAME:-Admin}
+      - SUT_PASSWORD=${SUT_PASSWORD:-admin123}
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./allure/results:/app/allure/results
+      - ./test-results:/app/test-results
+    profiles:
+      - test
+

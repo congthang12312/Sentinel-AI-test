@@ -1,0 +1,64 @@
+{
+  "name": "mcp-automation-test",
+  "version": "1.0.0",
+  "description": "AI-Powered Automation Testing Framework — Full BDD Pipeline",
+  "scripts": {
+    "test": "npx bddgen && playwright test",
+    "test:ci": "npx bddgen && playwright test",
+    "posttest": "echo '📊 View report at http://localhost:5050/allure-docker-service/projects/default/reports/latest/index.html'",
+    "test:ui": "playwright test --ui",
+    "test:login": "playwright test src/tests/auth/",
+    "test:leave": "playwright test src/tests/leave/",
+    "compile": "tsc --noEmit",
+    "compile:ai": "tsc --noEmit -p tsconfig.ai.json",
+    "lint": "eslint src/ ai-agent/",
+    "lint:fix": "eslint src/ ai-agent/ --fix",
+    "format": "prettier --write 'src/**/*.ts' 'ai-agent/**/*.ts'",
+    "clean": "rm -rf allure/results/* playwright-report/* test-results/*",
+    "prepare": "husky",
+    "ai:gen": "ts-node ai-agent/cli.ts",
+    "ai:gen:login": "ts-node ai-agent/cli.ts requirements/login-flow.md",
+    "ai:gen:employee": "ts-node ai-agent/cli.ts requirements/create-employee-flow.md",
+    "ai:gen:search": "ts-node ai-agent/cli.ts requirements/search-employee-flow.md"
+  },
+  "keywords": [
+    "ai",
+    "automation",
+    "testing",
+    "playwright",
+    "cucumber",
+    "bdd"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@eslint/js": "^9.39.4",
+    "@google/generative-ai": "^0.24.1",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.0",
+    "@typescript-eslint/parser": "^8.57.0",
+    "allure-playwright": "^3.6.0",
+    "dotenv": "^17.3.1",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "playwright-bdd": "^8.5.0",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

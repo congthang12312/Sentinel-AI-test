@@ -1,0 +1,63 @@
+{
+    "codingLevel": -1,
+    "statusline": "minimal",
+    "privacyBlock": true,
+    "docs": {
+        "maxLoc": 800
+    },
+    "plan": {
+        "namingFormat": "{date}-{issue}-{slug}",
+        "dateFormat": "YYMMDD-HHmm",
+        "issuePrefix": "GH-",
+        "reportsDir": "reports",
+        "validation": {
+            "mode": "prompt",
+            "minQuestions": 3,
+            "maxQuestions": 8,
+            "focusAreas": [
+                "assumptions",
+                "risks",
+                "tradeoffs",
+                "architecture"
+            ]
+        }
+    },
+    "paths": {
+        "docs": "docs",
+        "plans": "plans",
+        "agents": ".agent/agents",
+        "skills": ".agent/skills",
+        "scripts": ".agent/scripts",
+        "workflows": ".agent/workflows"
+    },
+    "locale": {
+        "thinkingLanguage": null,
+        "responseLanguage": null
+    },
+    "trust": {
+        "passphrase": null,
+        "enabled": false
+    },
+    "project": {
+        "type": "auto",
+        "packageManager": "auto",
+        "framework": "auto"
+    },
+    "models": {
+        "default": "Claude Sonnet 4.5",
+        "planner": "Claude Opus 4.6 (Thinking)",
+        "docsManager": "Gemini 3 Pro (High)",
+        "gitManager": "Claude Sonnet 4.5 (Thinking)",
+        "codeSimplifier": "Claude Sonnet 4.5 (Thinking)"
+    },
+    "gemini": {
+        "model": "gemini-3-flash-preview"
+    },
+    "skills": {
+        "research": {
+            "useGemini": true
+        }
+    },
+    "hooks": {},
+    "assertions": []
+}
